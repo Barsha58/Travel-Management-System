@@ -1,0 +1,76 @@
+ *{
+	margin:0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family: 'poppins',sans-serif;
+}
+body {
+    background-image: url('image/sea3.jpg');
+    background-size: cover;
+}
+.header{
+	min-height:100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(image/sea2.jpg);
+	background-size: cover;
+	background-position: center;
+}
+nav{
+	display: flex;
+	align-items: center;
+	justify-content:space-between;
+	padding: 20px 7%;
+}
+.logo{
+	width:140px;
+	cursor: pointer;
+}
+.nav-links li{
+	list-style: none;
+	display: inline-block;
+	margin: 10px 30px;
+}
+nav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav li a:hover {
+    color: #ff9900; /* Change color on ho   ver */
+}
+
+
+.welcome-container {
+    height: 100vh; /* Make the container cover the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('your-background-image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    color: #fff; /* Text color for the quote */
+    text-align: center;
+}
+
+.quote {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for the quote */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.quote p {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.quote p:last-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+
+

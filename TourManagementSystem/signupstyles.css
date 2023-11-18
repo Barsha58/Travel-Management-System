@@ -1,0 +1,124 @@
+body, h1, p, form {
+    margin: 0;
+    padding: 0;
+}
+
+ body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+	color: white; 
+}
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    border-radius: 10px;
+	margin: 50px auto; 
+    padding: 20px;
+    margin: 100px auto;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: blink 1s infinite alternate;
+  }
+
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.7;
+    }
+  }
+  
+  input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  select, input[type="radio"] {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  body {
+    background-image: url(image/sea4.jpg);
+    background-size: cover; /* Adjusts the image to cover the entire container */
+}
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+color: white; 	/* Adjust the padding here */
+}
+.blinking-input {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Define the animation when the input is focused */
+.blinking-input:focus {
+    animation: blink 1s alternate infinite;
+    background-color: #ffc107; /* Change to the desired background color */
+}
+h2 {
+    text-align: center; /* Center the heading */
+    color: white;
+font-size: 28px;	/* Change the font color to white */
+    margin-bottom: 20px;
+}
+
+label {
+    color: white; /* Change the font color of labels to white */
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.login-link {
+    text-align: center;
+}
+
+.login-link a {
+    color: #FFD700;; /* Change the font color of the link */
+    text-decoration: underline;
+}
+
+.login-link p {
+    color: white; /* Change the font color of the <p> text to a different color */
+}
+

@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,600;1,300&display=swap');
+
+/* Define CSS variables */
+:root {
+  --blue: #29d9d5;
+  --black: #111;
+  --white: #fff;
+  --light-color: #aaa;
+  --bg-color: #222;
+  --black-bg: rgba(17, 17, 17, 0.7);
+  --border: 2px solid var(--blue);
+}
+
+/* Global Styles */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.2s linear;
+}
+
+/* HTML Styles */
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+}
+
+/* Body Styles */
+body {
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* Button Styles */
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: var(--blue);
+  border: var(--border);
+  border-radius: 5rem;
+  cursor: pointer;
+  background: none;
+}
+
+.btn:hover {
+  background: var(--blue);
+  color: var(--black);
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+/* Navbar Styles */
+.navbar a {
+  font-size: 2rem;
+  color: #fff;
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.navbar a:hover {
+  color: var(--blue);
+}
+
+/* Logo Styles */
+.logo {
+  font-size: 2.5rem;
+  color: var(--white);
+  font-weight: bolder;
+}
+
+.logo i {
+  color: var(--blue);
+  padding-right: 0.5rem;
+}
+
+/* Home Section Styles */
+.home {
+  margin: 0 auto;
+  margin-top: 9rem;
+  width: 90%;
+  border-radius: 1rem;
+  background: url('per.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.home .content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.home .content span {
+  font-weight: bolder;
+  font-size: 4vw;
+  display: block;
+  color: transparent;
+  position: relative;
+}
+
+.home .content span::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  font-weight: bolder;
+  font-size: 4vw;
+  -webkit-text-stroke: 0.1rem var(--white);
+  color: transparent;
+}
+
+.home .content h3 {
+  font-size: 2.5rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.home .content p {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.home .content h3,
+.home .content p {
+  opacity: 0;
+  animation: fadeInOut 5s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+/* CSS for the search form */
+.home .search-form {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px;
+ 
+  
+}
+
+/* CSS for the search form select */
+.home .search-form select {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(41, 217, 213, 0.7);
+  color: black;
+  padding: 10px;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  width: 40%;
+  margin-right: 10px;
+}
+
+/* Style the month input */
+.home .search-form input[type="month"] {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(41, 217, 213, 0.7);
+  color: blue;
+  padding: 10px;
+  font-size: 1.4rem;
+  width: 30%;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Style the search button */
+.home .search-form button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #29d9d5;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home .search-form button[type="submit"]:hover {
+  background-color: #1e9a96;
+}
+.search-results {
+  display: none;
+  text-align: center;
+  color: blue;
+  font-size: 10px;
+  width: 30%; /* Set the width of the container as needed */
+  margin: 20px auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding to the container */
+}
+
+/* Style paragraphs within the search results */
+.search-results p {
+  color: black; /* Set text color to black for paragraphs within .search-results */
+  font-size: 15px;
+}
+
+/* Style images within the search results */
+.search-results img {
+  max-width: 100%; /* Ensure images fit within the container */
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+h1 {
+  text-align: center;
+  color: var(--black);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.package-card {
+  background-color: #E0FFFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  margin: 20px 10px;
+  width: calc(33.33% - 20px);
+  display: inline-block;
+  vertical-align: top;
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid var(--blue);
+}
+
+.package-card:hover {
+  transform: scale(1.05);
+}
+
+.package-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.package-card h2 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: var(--black);
+}
+
+.package-card p {
+  font-size: 16px;
+  margin-top: 10px;
+  color: black;
+}
+/* Style for the heading container */
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style for the subheading (span) */
+.heading span {
+    display: block; /* Display on a new line */
+    font-size: 3rem; /* Adjust the font size */
+    color: #29d9d5; /* Your desired color */
+    margin-bottom: 10px; /* Add some spacing below the subheading */
+}
+
+/* Style for the main heading (h1) */
+.heading h1 {
+    font-size: 3.5rem; /* Adjust the font size */
+    color: #000080; /* Your desired color */
+}
+
+.book-now-button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: Goldenrod;
+  border: var(--border);
+  border-radius: 5rem;
+  cursor: pointer;
+  background: none;
+}
+
+.book-now-button:hover  {
+  background: var(--blue);
+  color: var(--black);
+}
+
+.search-results {
+  background-color: white;
+  border: 2px solid var(--blue);
+  color: black;
+  font-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for individual search result items */
+.search-result {
+  margin-bottom: 10px;
+}
+
+/* Style for highlighted text in search results */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+h1 {
+    text-align: center;
+	color:var(--blue) ;
+	font-size:30px;
+}
+/* Style the services section */
+.services {
+  background-color: transparent; /* Background color for the services section */
+  padding: 60px 0; /* Add padding to the top and bottom */
+  text-align: center; /* Center-align the content */
+ 
+}
+
+/* Style the heading in the services section */
+
+
+/* Style the service boxes */
+.box_container {
+  display: flex; /* Use flexbox to align the boxes horizontally */
+  justify-content: space-around; /* Space the boxes evenly */
+}
+
+.box {
+  width: 250px; /* Set a fixed width for the boxes */
+  background-color: #fff; /* Background color for the boxes */
+  padding: 20px; /* Add padding inside the boxes */
+  border-radius: 8px; /* Add rounded corners to the boxes */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  text-align: center; /* Center-align the box content */
+  border: 2px solid var(--blue);
+}
+
+.box i {
+  font-size: 36px; /* Font size for the icon */
+  color: #333; /* Icon color */
+}
+
+.box h3 {
+  font-size: 24px; /* Font size for the heading */
+  color: #333; /* Text color */
+  margin: 10px 0; /* Add some space above and below the heading */
+}
+
+.box p {
+  font-size: 16px; /* Font size for the paragraph text */
+  color: #777; /* Text color */
+}
+
+/* CSS for the gallery section */
+.gallery {
+    background-color: var--(white); /* Set the background color */
+    padding: 50px 0; /* Add padding for spacing */
+}
+
+/* CSS for the heading */
+.gallery .heading {
+    text-align: center;
+    margin-bottom: 30px; /* Add space below the heading */
+}
+
+.gallery .heading span {
+    color: #29d9d5; /* Set the color of the span */
+}
+
+.gallery .heading h1 {
+    font-size: 24px; /* Adjust the font size */
+}
+
+/* CSS for the image boxes */
+.gallery .box_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery .box {
+    margin: 15px; /* Add spacing between the boxes */
+    text-align: center;
+    background-color: #fff; /* Set the background color of the boxes */
+    border: 1px solid #ddd; /* Add a border around the boxes */
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px;
+    max-width: 300px; /* Limit the width of each box */
+}
+
+.gallery .box img {
+    max-width: 100%; /* Ensure images fit within the box */
+    border-radius: 5px; /* Add rounded corners to images */
+}
+
+.gallery .box span {
+    color: #555; /* Set the color of the text below the images */
+    font-size: 18px; /* Adjust the font size */
+}
+
+.gallery .box h3 {
+    font-size: 20px; /* Adjust the font size of the image titles */
+    margin-top: 10px; /* Add space between the title and the text below */
+}
+
+.footer {
+  background-color: var(--bg-color);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer .box {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  color: var(--light-color);
+  background-color: var(--black-bg);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.footer h3 {
+  font-size: 2.2rem;
+  color: var(--white);
+  padding: 1rem 0;
+}
+
+.footer p {
+  font-size: 1.4rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+.footer .share {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer .share a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: var(--border);
+  color: var(--blue);
+  margin-right: 0.5rem;
+  text-align: center;
+  display: inline-block;
+  &:hover {
+    background: var(--blue);
+    color: var(--black);
+  }
+}
+
+.footer.logo {
+  font-size: 2.5rem;
+  color: var(--blue);
+  font-weight: bolder;
+  text-align: center;
+}
+
+.footer.logo i {
+  color: var(--blue);
+  padding-right: 0.5rem;
+}
+
+/* Additional CSS for the footer contact section */
+.footer #contact {
+  flex-basis: calc(25% - 20px); /* Adjust the width as needed */
+}
+
+/* Additional CSS for the About Us and Quick Links boxes */
+.footer .box:nth-child(2),
+.footer .box:nth-child(3),
+.footer .box:nth-child(4) {
+  flex-basis: calc(25% - 20px); /* Adjust the width as needed */
+}
+
+	
+	.footer p:last-child {
+  text-align: center; /* Center-align the text */
+  font-weight: bold; /* Make the text bold */
+  margin-top: 10px; /* Add some top margin for spacing */
+}
+
+/* Adjust the width and margin to fit guide cards side by side */
+.guide-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Wrap to the next row if needed */
+    justify-content: space-between; /* Distribute the cards evenly horizontally */
+}
+
+.guide-card {
+    background-color: lightblue;;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    margin: 0 10px 20px 0; /* Adjust margin for spacing between cards */
+    width: calc(33.33% - 10px); /* Adjust width and margin for spacing */
+    box-sizing: border-box;
+}
+
+/* Clear margin for the last card in each row */
+.guide-card:nth-child(3n) {
+    margin-right: 0;
+}
+
+/* Add responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .guide-card {
+        width: calc(50% - 10px); /* Two cards per row on smaller screens */
+    }
+}
+
+.guide-card img {
+    max-width: 100%; /* Limit image width to fit its container */
+    max-height: 200px; /* Limit image height to 200 pixels (adjust as needed) */
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
